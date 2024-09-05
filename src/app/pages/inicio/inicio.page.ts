@@ -7,12 +7,16 @@ import { NavigationExtras, Router } from '@angular/router';
   styleUrls: ['./inicio.page.scss'],
 })
 export class InicioPage implements OnInit {
-  user: String = ''
-  pass: String = ''
+  user: string = ''
+  pass: string = ''
 
   constructor(private router:Router) { }
 
   ngOnInit() {
+    const navigation = this.router.getCurrentNavigation();
+    if (navigation?.extras?.state) {
+      this.user = navigation.extras.state['usuario'];
+    }
   }
 
   login () {

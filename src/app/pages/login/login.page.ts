@@ -9,12 +9,12 @@ import { InicioPage } from '../inicio/inicio.page';
 })
 export class LoginPage implements OnInit {
 
-  mdl_mail: String = '';
-  mdl_pass: String = '';
+  mdl_mail: string = '';
+  mdl_pass: string = '';
   warningVisible: boolean = false;
   loadingVisible: boolean = false;
-  user_rec: String = '';
-  pass_rec: String = '';
+  user_rec: string = '';
+  pass_rec: string = '';
 
   constructor(private router:Router) { }
 
@@ -30,6 +30,12 @@ export class LoginPage implements OnInit {
   login() {
     this.warningVisible = false;
     this.loadingVisible = true;
+
+    if (!this.mdl_mail || !this.mdl_pass) {
+      this.warningVisible = true;
+      this.loadingVisible = false;
+      return;
+    }
 
     setTimeout(() => {
       if (this.mdl_mail == this.user_rec && this.mdl_pass == this.pass_rec) {

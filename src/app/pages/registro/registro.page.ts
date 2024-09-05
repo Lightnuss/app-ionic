@@ -7,8 +7,8 @@ import { NavigationExtras, Router } from '@angular/router';
   styleUrls: ['./registro.page.scss'],
 })
 export class RegistroPage implements OnInit {
-  user: String = ''
-  pass: String = ''
+  user: string = ''
+  pass: string = ''
 
 
   constructor(private router: Router){ }

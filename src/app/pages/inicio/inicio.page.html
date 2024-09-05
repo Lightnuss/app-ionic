@@ -1,12 +1,28 @@
 <ion-header [translucent]="true">
   <ion-toolbar class="barra">
     <ion-title >Inicio</ion-title>
+   
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding fondo">
+
   <ion-card>
-    <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+    <ion-card-header>
+      <!-- Avatar para la foto de perfil -->
+      <ion-avatar>
+        <img src="assets/imagenes/foto-de-perfil.jpg" alt="Foto de perfil" />
+      </ion-avatar>
+    </ion-card-header>
+
+    <ion-card-content>
+      <h2>Hola, {{ user }}!</h2>
+      <p>Bienvenido a tu perfil.</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <img alt="Silhouette of mountains" src="assets/imagenes/Padre_alonso_ovalle_sede.jpg" />
     <ion-card-header>
       <ion-card-title>PAO</ion-card-title>
       <ion-card-subtitle>Padre Alonso de Ovalle</ion-card-subtitle>
@@ -14,7 +30,8 @@
     <ion-card-content>
       La mejor sede de todos los tiempos
     </ion-card-content>
-  </ion-card>
+  </ion-card>  
+
   <ion-button class="boton" expand="block" (click)="login()">
     Cerrar sesión
   </ion-button>

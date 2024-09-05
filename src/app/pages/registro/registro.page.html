@@ -6,15 +6,12 @@
 
 <ion-content [fullscreen]="true" class="ion-padding fondo">
   <ion-item class="input" lines="none">
-    <ion-input label="Correo" labelPlacement="floating"></ion-input>
+    <ion-input [(ngModel)]="user" label="Correo" labelPlacement="floating"></ion-input>
   </ion-item>
   <ion-item class="input" lines="none">
-    <ion-input type="password" label="Contraseña" labelPlacement="floating"></ion-input>
+    <ion-input [(ngModel)]="pass" type="password" label="Contraseña" labelPlacement="floating"></ion-input>
   </ion-item>
-  <ion-item class="input" lines="none">
-    <ion-input type="password" label="Ingrese nuevamente su contraseña" labelPlacement="floating"></ion-input>
-  </ion-item>
-  <ion-button expand="block" class="boton">
+  <ion-button expand="block" class="boton" (click)="registro()">
     Registrarse
   </ion-button>
 </ion-content>

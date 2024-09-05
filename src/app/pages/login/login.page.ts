@@ -13,10 +13,18 @@ export class LoginPage implements OnInit {
   mdl_pass: String = '';
   warningVisible: boolean = false;
   loadingVisible: boolean = false;
+  user_rec: String = '';
+  pass_rec: String = '';
 
   constructor(private router:Router) { }
 
   ngOnInit() {
+    let extras = this.router.getCurrentNavigation()?.extras
+    if(extras?.state){
+      this.user_rec = extras?.state['usuario'];
+      this.pass_rec = extras?.state['pass'];
+      console.log(this.user_rec, this.pass_rec);
+    }
   }
 
   login() {
@@ -24,15 +32,15 @@ export class LoginPage implements OnInit {
     this.loadingVisible = true;
 
     setTimeout(() => {
-      if (this.mdl_mail == "admin" && this.mdl_pass == "admin") {
+      if (this.mdl_mail == this.user_rec && this.mdl_pass == this.pass_rec) {
         let extras: NavigationExtras = {
           state: {
-            'usuario': this.mdl_mail,
-            'contrasena': this.mdl_pass
-          }
-        },
-        replaceUrl = true;
-  
+            'usuario': this.user_rec,
+            'contrasena': this.pass_rec
+          },
+          replaceUrl: true
+        }
+                
         this.router.navigate(["inicio"], extras)
       } else {
         this.warningVisible = true;
@@ -42,7 +50,13 @@ export class LoginPage implements OnInit {
   }
 
   registrarse () {
-    this.router.navigate(['registro'])
+    let extras: NavigationExtras = {
+
+      replaceUrl: true
+    }
+    
+    
+    this.router.navigate(["registro"], extras)
   }
 
 }

@@ -9,28 +9,39 @@ import { NavigationExtras, Router } from '@angular/router';
 export class InicioPage implements OnInit {
   user: string = ''
   pass: string = ''
+  user_rec: string = ''
+  pass_rec: string = ''
 
   constructor(private router:Router) { }
 
   ngOnInit() {
-    const navigation = this.router.getCurrentNavigation();
-    if (navigation?.extras?.state) {
-      this.user = navigation.extras.state['usuario'];
+    let extras = this.router.getCurrentNavigation()?.extras
+    if (extras?.state) {
+      this.user_rec = extras?.state['usuario'];
+      this.pass_rec = extras?.state['contrasena'];
     }
   }
 
   login () {
     let extras: NavigationExtras = {
       state: {
-      'usuario': this.user,
-      'pass': this.pass
+      'usuario': this.user_rec,
+      'pass': this.pass_rec
+      },
+      replaceUrl: true
+    }        
+    this.router.navigate(['login'], extras)
+  }
+
+  cambiocontra () {
+    let extras: NavigationExtras = {
+      state: {
+        'usuario': this.user_rec,
+        'pass': this.pass_rec
       },
       replaceUrl: true
     }
-    
-    
-    this.router.navigate(["login"], extras)
+    this.router.navigate(['cambiopass'], extras);
   }
-
 
 }

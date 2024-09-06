@@ -6,15 +6,19 @@
 
 <ion-content [fullscreen]="true" class="ion-padding fondo">
   <ion-item class="input" lines="none">
-    <ion-input label="Correo" labelPlacement="floating"></ion-input>
+    <ion-input [(ngModel)]="user" label="Usuario" labelPlacement="floating"></ion-input>
+  </ion-item>
+  <ion-item  class="input" lines="none">
+    <ion-input [(ngModel)]="pass" type="password" label="Nueva contraseña" labelPlacement="floating"></ion-input>
   </ion-item>
   <ion-item class="input" lines="none">
-    <ion-input type="Contraseña actual" label="Contraseña actual" labelPlacement="floating"></ion-input>
+    <ion-input [(ngModel)]="confirmar" type="password" label="Confirmar contraseña" labelPlacement="floating"></ion-input>
   </ion-item>
-  <ion-item class="input" lines="none">
-    <ion-input type="Nueva contraseña" label="Nueva contraseña" labelPlacement="floating"></ion-input>
-  </ion-item>
-  <ion-button expand="block" class="boton">
+  <ion-button expand="block" class="boton" (click)="cambiopass()">
     Confirmar cambio
   </ion-button>
+
+  <ion-item class="item-warning" lines="none" *ngIf="warningVisible">
+    Las contraseñas deben coincidir
+  </ion-item>
 </ion-content>

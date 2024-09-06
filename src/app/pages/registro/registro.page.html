@@ -11,7 +11,12 @@
   <ion-item class="input" lines="none">
     <ion-input [(ngModel)]="pass" type="password" label="Contraseña" labelPlacement="floating"></ion-input>
   </ion-item>
+  
   <ion-button expand="block" class="boton" (click)="registro()">
     Registrarse
   </ion-button>
+
+  <ion-item class="item-warning" lines="none" *ngIf="warningVisible">
+    Datos erróneos
+  </ion-item>
 </ion-content>

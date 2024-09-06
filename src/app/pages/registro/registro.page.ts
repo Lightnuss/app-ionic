@@ -9,7 +9,7 @@ import { NavigationExtras, Router } from '@angular/router';
 export class RegistroPage implements OnInit {
   user: string = ''
   pass: string = ''
-
+  warningVisible: boolean = false;
 
   constructor(private router: Router){ }
 
@@ -17,15 +17,19 @@ export class RegistroPage implements OnInit {
   }
 
   registro (){
-    let extras : NavigationExtras = {
-      state: {
-        'usuario': this.user,
-        'pass': this.pass
-      },
-      replaceUrl: true
+    if (this.user && this.pass) {
+      let extras : NavigationExtras = {
+        state: {
+          'usuario': this.user,
+          'pass': this.pass
+        },
+        replaceUrl: true
+      }
+      this.router.navigate(['login'], extras);
+    } else {
+      this.warningVisible = true
     }
-    console.log(this.user, this.pass);
-    this.router.navigate(['login'], extras);
+    
   }
 
 

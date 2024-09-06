@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
-import { InicioPage } from '../inicio/inicio.page';
 
 @Component({
   selector: 'app-login',
@@ -9,8 +8,8 @@ import { InicioPage } from '../inicio/inicio.page';
 })
 export class LoginPage implements OnInit {
 
-  mdl_mail: string = '';
-  mdl_pass: string = '';
+  user: string = '';
+  pass: string = '';
   warningVisible: boolean = false;
   loadingVisible: boolean = false;
   user_rec: string = '';
@@ -31,14 +30,14 @@ export class LoginPage implements OnInit {
     this.warningVisible = false;
     this.loadingVisible = true;
 
-    if (!this.mdl_mail || !this.mdl_pass) {
+    if (!this.user || !this.pass) {
       this.warningVisible = true;
       this.loadingVisible = false;
       return;
     }
 
     setTimeout(() => {
-      if (this.mdl_mail == this.user_rec && this.mdl_pass == this.pass_rec) {
+      if (this.user == this.user_rec && this.pass == this.pass_rec) {
         let extras: NavigationExtras = {
           state: {
             'usuario': this.user_rec,
@@ -47,7 +46,7 @@ export class LoginPage implements OnInit {
           replaceUrl: true
         }
                 
-        this.router.navigate(["inicio"], extras)
+        this.router.navigate(['inicio'], extras)
       } else {
         this.warningVisible = true;
       }
@@ -60,9 +59,8 @@ export class LoginPage implements OnInit {
 
       replaceUrl: true
     }
-    
-    
-    this.router.navigate(["registro"], extras)
+        
+    this.router.navigate(['registro'], extras)
   }
 
 }

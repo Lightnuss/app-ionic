@@ -37,12 +37,15 @@
 @import "@ionic/angular/css/palettes/dark.system.css";
 
 .barra {
-    --background: #7a8bee;
+    --background: #000000;
     --color: #f8f8f8;
 }
 
-.fondo {
-    --background: #85c9dd;
+
+
+ion-content.background{
+    --background: url(assets/imagenes/textura-1.jpeg) 0 0/100% 100% no-repeat;
+    --background-size: contain;
 }
 
 .input {
@@ -62,9 +65,100 @@
 }
 
 .item-warning {
-    --background: #e0e422;
-    --color: #ffffff
+    --background: rgb(252, 9, 9); /* Color de fondo con opacidad ajustada */
+    --color: #000000; /* Color del texto blanco */
     font-weight: bold;
-    border-radius: 5px;
-    margin-top: 10px;
+    border-radius: 5px; /* Bordes redondeados */
+    margin-top: 10px; /* Margen superior */
+    padding: 10px; /* Espaciado interno para mejor presentación */
 }
+
+.logo {
+    width: 150px; /* Ajusta el tamaño del logo según sea necesario */
+    height: auto;
+    margin-right: 20px; /* Espacio entre el logo y el título */
+    display: inline-block;
+}
+
+.center-container {
+    text-align: center;
+}
+  
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.custom-button {
+    --background: #3880ff;
+    --color: #fff;
+    --border-radius: 50px; 
+    margin: 20px 0;
+    width: 350px;
+ 
+    
+}
+
+.button-container {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.custom-card {
+    --background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(190,203,255,1) 0%, rgba(103,43,176,1) 100%, rgba(42,31,162,1) 100%);
+    padding: 16px;
+    border-radius: 35px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.custom-card-content {
+    color: #000000;
+}
+
+.sede {
+    border-radius: 35px;
+}
+
+.line-input {
+    --background: transparent; 
+    --border-color: transparent; 
+    --border-width: 0; 
+    --padding-start: 0; 
+    --padding-end: 0;
+    border-bottom: 2px solid #38a5ff;
+    margin-bottom: 16px; 
+    width: 350px;
+}
+
+.title {
+    font-size: 1.5rem; 
+    font-weight: bold;
+    color: #ffffff; 
+    text-align: center; 
+    font-family: 'Arial', sans-serif; 
+    text-transform: uppercase; 
+    letter-spacing: 0.1em; 
+    line-height: 1.2; 
+    font-style: italic;
+    text-shadow: 5px 5px 8px rgba(255, 255, 255, 0.5);
+}
+
+.barrita {
+    --background: rgb(0, 0, 0);
+}
+
+ 
+  

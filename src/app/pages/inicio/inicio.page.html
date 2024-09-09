@@ -1,13 +1,24 @@
 <ion-header [translucent]="true">
   <ion-toolbar class="barra">
-    <ion-title >Inicio</ion-title>
-   
+    <ion-grid>
+      <div class="center-container">
+        <ion-col size="auto">         
+          <img  src="assets/imagenes/logo-duoc.png"  class="logo" />         
+        </ion-col>
+      </div>
+    </ion-grid>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding fondo">
 
-  <ion-card>
+<ion-toolbar  class="barrita">
+  <ion-title class="title"> Inicio </ion-title>
+</ion-toolbar>
+
+
+<ion-content [fullscreen]="true" class="background">
+
+  <ion-card class="custom-card">
     <ion-card-header>
       <!-- Avatar para la foto de perfil -->
       <ion-avatar>
@@ -15,13 +26,13 @@
       </ion-avatar>
     </ion-card-header>
 
-    <ion-card-content>
+    <ion-card-content class="custom-card-content">
       <h2>Hola, {{ user_rec }}</h2>
       <p>Bienvenido a tu perfil.</p>
     </ion-card-content>
   </ion-card>
 
-  <ion-card>
+  <ion-card class="sede">
     <img alt="PAO" src="assets/imagenes/Padre_alonso_ovalle_sede.jpg" />
     <ion-card-header>
       <ion-card-title>PAO</ion-card-title>
@@ -31,12 +42,15 @@
       La mejor sede de todos los tiempos
     </ion-card-content>
   </ion-card>  
-
-  <ion-button class="boton" expand="block" (click)="cambiocontra()">
+  <div class="button-container">
+  <ion-button class="custom-button" expand="block" (click)="cambiocontra()">
     Modificar contraseña
   </ion-button>
 
-  <ion-button class="boton" expand="block" (click)="login()">
+  <ion-button class="custom-button" expand="block" (click)="login()">
     Cerrar sesión
   </ion-button>
+  </div>
+
+  
 </ion-content>

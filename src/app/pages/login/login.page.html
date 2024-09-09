@@ -1,25 +1,44 @@
 <ion-header [translucent]="true">
   <ion-toolbar class="barra">
-    <ion-title>Duoc UC</ion-title>
+    <ion-grid>
+      <div class="center-container">
+        <ion-col size="auto">
+          <img  src="assets/imagenes/logo-duoc.png"  class="logo" />
+        </ion-col>
+      </div>
+    </ion-grid>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding fondo">
-  <ion-item class="input" lines="none">
-    <ion-input [(ngModel)]="user" label="Correo" labelPlacement="floating"></ion-input>
-  </ion-item>
-  <ion-item class="input" lines="none">
+<ion-content [fullscreen]="true" class="background">
+
+  <ion-card>
+    <img  src="assets/imagenes/sedes-campus.jpg" />
+  </ion-card>
+
+  <div class="button-container">
+    <ion-item class="line-input" lines="none">
+      <ion-input [(ngModel)]="user" label="Correo" labelPlacement="floating" type="email"></ion-input>
+    </ion-item>
+  <ion-item class="line-input" lines="none">
     <ion-input [(ngModel)]="pass" label="Contraseña" labelPlacement="floating" type="password"></ion-input>
-  </ion-item>
-  <ion-button expand="block" class="boton" (click)="login()">
+  </ion-item >
+  <ion-button expand="block" class="custom-button" (click)="login()">
     <ion-spinner name="crescent" class="ion-margin-end" *ngIf="loadingVisible"></ion-spinner>
     Ingresar
   </ion-button>
-  <ion-button (click)="registrarse()">
+  
+  <ion-button (click)="registrarse()" class="custom-button" expand="block">
     Regístrate
   </ion-button>
+</div>
+  
+
+
 
   <ion-item class="item-warning" lines="none" *ngIf="warningVisible">
     Credenciales inválidas
   </ion-item>
 </ion-content>
+
+

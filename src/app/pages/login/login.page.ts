@@ -63,4 +63,13 @@ export class LoginPage implements OnInit {
     this.router.navigate(['registro'], extras)
   }
 
+  redireccion() {
+    let extras: NavigationExtras = {
+
+      replaceUrl: true
+    }
+        
+    this.router.navigate(['login'])
+  }
+
 }

@@ -32,5 +32,13 @@ export class RegistroPage implements OnInit {
     
   }
 
+  redireccion() {
+    let extras: NavigationExtras = {
+
+      replaceUrl: true
+    }
+        
+    this.router.navigate(['login'])
+  }
 
 }

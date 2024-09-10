@@ -8,8 +8,10 @@ import { NavigationExtras, Router } from '@angular/router';
 })
 export class RegistroPage implements OnInit {
   user: string = ''
+  email: string = ''
   pass: string = ''
   warningVisible: boolean = false;
+  loadingVisible: boolean = false;
 
   constructor(private router: Router){ }
 
@@ -17,10 +19,15 @@ export class RegistroPage implements OnInit {
   }
 
   registro (){
-    if (this.user && this.pass) {
+
+    this.loadingVisible = true;
+
+    setTimeout(() => {
+    if (this.email && this.pass && this.user) {
       let extras : NavigationExtras = {
         state: {
-          'usuario': this.user,
+          'nombre' : this.user,
+          'usuario': this.email,
           'pass': this.pass
         },
         replaceUrl: true
@@ -29,6 +36,8 @@ export class RegistroPage implements OnInit {
     } else {
       this.warningVisible = true
     }
+    this.loadingVisible = false;
+    }, 2500);
     
   }
 

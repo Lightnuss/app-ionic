@@ -12,13 +12,18 @@
 
 <ion-content [fullscreen]="true" class="background">
 
-  <ion-card>
+  <div class="center-container">
+    <ion-col size="auto">
     <img  src="assets/imagenes/sedes-campus.jpg" />
-  </ion-card>
+  </ion-col>
+  </div>
 
   <div class="button-container">
     <ion-item class="line-input" lines="none">
-      <ion-input [(ngModel)]="user" label="Correo" labelPlacement="floating" type="email"></ion-input>
+      <ion-input [(ngModel)]="user" label="Nombre de Usuario" labelPlacement="floating" type="email"></ion-input>
+    </ion-item>
+    <ion-item class="line-input" lines="none">
+      <ion-input [(ngModel)]="email" label="Correo" labelPlacement="floating" type="email"></ion-input>
     </ion-item>
   <ion-item class="line-input" lines="none">
     <ion-input [(ngModel)]="pass" label="Contraseña" labelPlacement="floating" type="password"></ion-input>

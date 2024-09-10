@@ -7,16 +7,19 @@ import { NavigationExtras, Router } from '@angular/router';
   styleUrls: ['./inicio.page.scss'],
 })
 export class InicioPage implements OnInit {
-  user: string = ''
+  nombre: string = ''
+  email: string = ''
   pass: string = ''
   user_rec: string = ''
   pass_rec: string = ''
-
+  nombre_rec: string = ''
+  
   constructor(private router:Router) { }
 
   ngOnInit() {
     let extras = this.router.getCurrentNavigation()?.extras
     if (extras?.state) {
+      this.nombre_rec = extras?.state['nombre'];
       this.user_rec = extras?.state['usuario'];
       this.pass_rec = extras?.state['contrasena'];
     }
@@ -25,6 +28,7 @@ export class InicioPage implements OnInit {
   login () {
     let extras: NavigationExtras = {
       state: {
+      'nombre': this.nombre_rec,
       'usuario': this.user_rec,
       'pass': this.pass_rec
       },
@@ -36,6 +40,7 @@ export class InicioPage implements OnInit {
   cambiocontra () {
     let extras: NavigationExtras = {
       state: {
+        'nombre': this.nombre_rec,
         'usuario': this.user_rec,
         'pass': this.pass_rec
       },

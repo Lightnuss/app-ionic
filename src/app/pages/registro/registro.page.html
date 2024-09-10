@@ -18,19 +18,25 @@
 
 <ion-content [fullscreen]="true" class="background">
 
-  <ion-card>
+  <div class="center-container">
+    <ion-col size="auto">
     <img  src="assets/imagenes/duoc-1.png" />
-  </ion-card>
+  </ion-col>
+  </div>
 
   <div class="button-container">
+    <ion-item class="line-input" lines="none">
+      <ion-input [(ngModel)]="user" label="Nombre de Usuario" labelPlacement="floating"></ion-input>
+    </ion-item>
   <ion-item class="line-input" lines="none">
-    <ion-input [(ngModel)]="user" label="Correo" labelPlacement="floating"></ion-input>
+    <ion-input [(ngModel)]="email" label="Correo" labelPlacement="floating"></ion-input>
   </ion-item>
   <ion-item class="line-input" lines="none">
     <ion-input [(ngModel)]="pass" type="password" label="Contraseña" labelPlacement="floating"></ion-input>
   </ion-item>
   
   <ion-button expand="block" class="custom-button" (click)="registro()">
+    <ion-spinner name="crescent" class="ion-margin-end" *ngIf="loadingVisible"></ion-spinner>
     Registrarse
   </ion-button>
 

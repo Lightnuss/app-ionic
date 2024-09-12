@@ -12,9 +12,10 @@
   </ion-toolbar>
 </ion-header>
 
+<!--
 <ion-toolbar class="barrita">
   <ion-title class="title"> Registrate </ion-title>
-</ion-toolbar>
+</ion-toolbar>-->
 
 <ion-content [fullscreen]="true" class="background">
 
@@ -41,11 +42,11 @@
     <ion-spinner name="crescent" class="ion-margin-end" *ngIf="loadingVisible"></ion-spinner>
     Registrarse
   </ion-button>
-
+</div>
+</div>
 
   <ion-item class="item-warning" lines="none" *ngIf="warningVisible">
     Datos erróneos
   </ion-item>
-</div>
-</div>
+
 </ion-content>

@@ -65,21 +65,8 @@ ion-content.background{
 }
 
 .item-warning {
-    --background: rgb(252, 0, 0); /* Color de fondo */
+    --background: rgb(255, 251, 3); /* Color de fondo */
     --color: #000000; /* Color del texto */
-    font-weight: bold;
-    font-family: 'Times New Roman', Times, serif;
-    border: 3px solid rgb(0, 0, 0);
-    box-shadow: 0px 4px 10px rgba(216, 211, 211, 0.911);
-    border-radius: 70px; /* Bordes redondeados más pequeños */
-    margin-top: 0px; /* Margen superior */
-    letter-spacing: 0.2em; 
-    background-color: var(--background); /* Aplicar el color de fondo */
-    color: var(--color); /* Aplicar el color de texto */
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center; 
-    width: 300px;
 }
 
 .logo {
@@ -92,12 +79,12 @@ ion-content.background{
 .center-container {
     text-align: center;
     margin-top: 1;
-    
 }
 
 .imagen {
     border-radius: 29px;
     width: 370px;
+    margin-top: 20px; 
 }
   
 .form-container {
@@ -125,10 +112,10 @@ ion-content.background{
 }
 
 .panel-transparente {
-    background-color: rgba(255, 255, 255, 0.288); /* Fondo blanco con 80% de opacidad */
+    background-color: rgba(255, 255, 255, 0); /* Fondo blanco con 80% de opacidad */
     padding: 20px; /* Espacio alrededor del contenido */
     border-radius: 15px; 
-    box-shadow: 0px 3px 5px rgb(16, 122, 155);
+    box-shadow: 0px 3px 5px rgba(16, 123, 155, 0);
     width: 380px; 
     height: 500px; 
     max-width: 100%; 

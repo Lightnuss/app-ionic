@@ -94,6 +94,11 @@ ion-content.background{
     margin-top: 1;
     
 }
+
+.imagen {
+    border-radius: 29px;
+    width: 370px;
+}
   
 .form-container {
     display: flex;
@@ -117,6 +122,18 @@ ion-content.background{
     --border-radius: 50px; 
     margin: 20px 0;
     width: 350px;
+}
+
+.panel-transparente {
+    background-color: rgba(255, 255, 255, 0.288); /* Fondo blanco con 80% de opacidad */
+    padding: 20px; /* Espacio alrededor del contenido */
+    border-radius: 15px; 
+    box-shadow: 0px 3px 5px rgb(16, 122, 155);
+    width: 380px; 
+    height: 500px; 
+    max-width: 100%; 
+    margin: 0 auto;
+    margin-top: 20px;
 }
 
 .button-container {

@@ -26,6 +26,8 @@ export class CambiopassPage implements OnInit {
       this.nombre_rec = extras?.state['nombre'];
       this.user_rec = extras?.state['usuario'];
       this.pass_rec = extras?.state['pass'];
+
+      this.user = this.nombre_rec;
     }
   }
 
@@ -44,7 +46,7 @@ export class CambiopassPage implements OnInit {
   
     
     setTimeout(() => {
-      if (this.pass === this.confirmar) {
+      if (this.pass === this.confirmar && this.email == this.user_rec) {
         let extras: NavigationExtras = {
           state: {
             'nombre': this.user,

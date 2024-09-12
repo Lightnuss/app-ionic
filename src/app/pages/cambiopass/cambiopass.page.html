@@ -16,14 +16,18 @@
 
 <ion-content [fullscreen]="true" class="background">
 
+  
   <div class="center-container">
     <ion-col size="auto">
-    <img  src="assets/imagenes/duoc-2.jpg" />
+    <img class="imagen" src="assets/imagenes/duoc-2.jpg" />
   </ion-col>
   </div>
+
+
+  <div class="panel-transparente">
   <div class="button-container">
     <ion-item class="line-input" lines="none">
-      <ion-input [(ngModel)]="user" label="Nombre de usuario" labelPlacement="floating"></ion-input>
+      <ion-input [(ngModel)]="user" [value]="nombre_rec" label="Nombre de usuario" labelPlacement="floating" readonly></ion-input>
     </ion-item>
   <ion-item class="line-input" lines="none">
     <ion-input [(ngModel)]="email" label="Correo" labelPlacement="floating"></ion-input>
@@ -40,9 +44,10 @@
     Confirmar cambio
   </ion-button>
   </div>
+ </div>
 
   <ion-item class="item-warning" lines="none" *ngIf="warningVisible">
-    Las contraseñas deben coincidir
+    Correo invalido o las contraseñas no coinciden.
   </ion-item>
 
   <ion-item class="item-warning" lines="none" *ngIf="warningVisible2">

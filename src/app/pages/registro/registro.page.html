@@ -20,10 +20,12 @@
 
   <div class="center-container">
     <ion-col size="auto">
-    <img  src="assets/imagenes/duoc-1.png" />
+    <img class="imagen"  src="assets/imagenes/duoc-1.png" />
   </ion-col>
   </div>
 
+
+  <div class="panel-transparente">
   <div class="button-container">
     <ion-item class="line-input" lines="none">
       <ion-input [(ngModel)]="user" label="Nombre de Usuario" labelPlacement="floating"></ion-input>
@@ -44,5 +46,6 @@
   <ion-item class="item-warning" lines="none" *ngIf="warningVisible">
     Datos erróneos
   </ion-item>
+</div>
 </div>
 </ion-content>
